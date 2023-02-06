@@ -16,11 +16,11 @@ public class BoardDto {
     private String author;
     private String title;
     private String content;
-    private Long fileId;
+    private String filePath;
     private LocalDateTime createdDate;
     private LocalDateTime modifiedDate;
 
     public Board toEntity() {
-        return Board.builder().id(id).author(author).title(title).content(content).fileId(fileId).build();
+        return Board.builder().id(id).author(author).title(title).content(content).filePath(filePath).build();
     }
 }

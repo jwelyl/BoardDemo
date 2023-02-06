@@ -69,13 +69,14 @@ public class BoardController {
            String filePath = savePath + "\\" + filename + ".jpg";
            files.transferTo(new File(filePath));
 
-           FileDto fileDto = new FileDto();
-           fileDto.setOrigFilename(origFilename);
-           fileDto.setFilename(filename);
-           fileDto.setFilePath(filePath);
-
-           Long fileId = fileService.saveFile(fileDto);
-           boardDto.setFileId(fileId);
+//           FileDto fileDto = new FileDto();
+//           fileDto.setOrigFilename(origFilename);
+//           fileDto.setFilename(filename);
+//           fileDto.setFilePath(filePath);
+//
+//           Long fileId = fileService.saveFile(fileDto);
+//           boardDto.setFileId(fileId);
+           boardDto.setFilePath(filePath);
            boardService.savePost(boardDto);
        } catch(Exception e) {
            e.printStackTrace();
@@ -88,7 +89,7 @@ public class BoardController {
     public String detail(@PathVariable("id") Long id, Model model) {
         BoardDto boardDto = boardService.getPost(id);
 
-        System.out.println("boardDto.getFileId() = " + boardDto.getFileId());
+        System.out.println("boardDto.getFilePath() = " + boardDto.getFilePath());
         model.addAttribute("post", boardDto);
         return "board/detail.html";
     }

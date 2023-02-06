@@ -31,7 +31,7 @@ public class Board {
     private String content;
 
     @Column
-    private Long fileId;
+    private String filePath;
 
     @CreatedDate
     @Column(updatable = false)
@@ -41,11 +41,11 @@ public class Board {
     private LocalDateTime modifiedDate;
 
     @Builder
-    public Board(Long id, String author, String title, String content, Long fileId) {
+    public Board(Long id, String author, String title, String content, String filePath) {
         this.id = id;
         this.author = author;
         this.title = title;
         this.content = content;
-        this.fileId = fileId;
+        this.filePath = filePath;
     }
 }
