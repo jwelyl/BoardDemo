@@ -1,6 +1,6 @@
 package com.example.boarddemo.service;
 
-import com.example.boarddemo.domain.Board;
+import com.example.boarddemo.domain.entity.Board;
 import com.example.boarddemo.domain.dto.BoardDto;
 import com.example.boarddemo.domain.repository.BoardRepository;
 import lombok.RequiredArgsConstructor;
@@ -49,6 +49,7 @@ public class BoardService {
                 .title(board.getTitle())
                 .content(board.getContent())
                 .createdDate(board.getCreatedDate())
+                .fileId(board.getFileId())
                 .build();
         return boardDto;
     }
